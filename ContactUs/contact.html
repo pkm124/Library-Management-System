@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script type="text/javascript">
+            function sendEmail() {
+                var mailSubject=document.getElementById("mailSubject").value
+                var mailBody=document.getElementById("mailBody").value
+                var mailBodyy=document.getElementById("mailBodyy").value
+                var Body1='Name: '+mailSubject+'<br>Email: '+mailBody+'<br>Subject: '+mailBodyy;
+                Email.send({
+    
+                    Host: "smtp.gmail.com",
+                    Username : "miniprojecthost989@gmail.com",
+                    Password : "Mini@123",
+                    //SecureToken : "aba7a08a-0077-41e6-9160-1970d8ffc5b2",
+                    To : "miniprojecthost989@gmail.com",
+                    From : "miniprojecthost989@gmail.com",
+                    Subject : mailSubject,
+                    Body : Body1
+                })
+                .then(function(message){
+                    alert("mail sent successfully")
+                });
+            }
+        </script>
+                <link rel="icon" href="logo.PNG" type="image/icon type" style="border-radius: 50%;">
+            <title>Contact Us</title>
+        <style>
+            input[type="text"], input[type="password"]
+            {
+                display: block;
+                background: none;
+                text-align: center;
+                width: 220px;
+                border: 2px solid white;
+                border-bottom: 2px solid red;
+                margin: 20px auto;
+                padding: 14px 10px;
+                outline: none;
+                color: black;
+                border-radi1us: 24px;
+                transition: 0.25s;
+            }
+                        
+            input[type="button"] 
+            {
+                display: block;
+                background: none;
+                text-align: center;
+                width: 120px;
+                border: 2px solid #2ecc71;
+                margin: 20px auto;
+                padding: 14px 10px;
+                outline: none;
+                color: black;
+                border-radius: 24px;
+                transition: 0.25s;
+                cursor: pointer;
+            }
+            .container{
+                
+                filter: drop-shadow(2px 6px 4px rgba(0, 0, 0, 0.4));
+                background-color: whitesmoke;
+                height: 600px;
+                width: 700px;
+                border-radius: 5px;
+                margin: 38px 368px;
+                border-top:5px solid goldenrod;
+                background-image: url('back.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+            }
+            body {
+                background-image: url('back.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+            }
+            .message{
+                height: 80px;
+            }
+        </style>
+    </head>
+    <body style="text-align: center;">
+        <div class="container"><br><br><br><br><br><br>
+            <h1>Contact Form</h1>
+            <input type='text' id="mailSubject" placeholder="Enter your name"/>
+            <input type='text' id="mailBody" placeholder="Enter your email"/>
+            <input type='text' id="mailBodyy" placeholder="Message" class="message"/>
+            <input type='button' value='Send Email' onclick='sendEmail()'/>
+        </div>
+    </body>
+</html>

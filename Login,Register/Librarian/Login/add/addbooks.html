@@ -1,0 +1,34 @@
+<?php require_once("config.php"); ?>
+<html>
+    <head></head>
+    <body>
+        <form action="" method="POST">
+            <input type="text" name="book_id" placeholder="book id" value="">
+            <input type="text" name="title" placeholder="title" value="">
+            <input type="text" name="author" placeholder="author" value="">
+            <input type="submit" name="submit" value="Register">
+        </form>
+    </body>
+</html>
+<?php
+    if(isset($_POST['submit'])){
+        $book_id=$_POST['book_id'];
+        $title=$_POST['title'];
+        $author=$_POST['author'];
+
+        $insertquery="INSERT INTO `books`(`book_id`, `title`, `author`) VALUES ('$book','$title','$author')";
+        $res=mysqli_query($dbc,$insertquery);
+        if($res){
+            ?>
+            <script>
+                alert("data inserted properly");
+            </script>
+        }else{
+            ?>
+            <script>
+                alert("data not inserted");
+            </script>
+            <?php
+        }
+    }
+?>
